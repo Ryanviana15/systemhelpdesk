@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HELP DESK BMS</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="main.css">
+<div class="navbar">
+<a class="active" href="#"><i class="fa fa-fw fa-home"></i></a> 
+  		<a href="https://mail.google.com/mail/u/0/#inbox"><i class="fa fa-fw fa-envelope"></i></a> 
+  		<a href="#"><i class="fa fa-fw fa-user"></i></a>
+  	</div>
+  	<br>
+  	<body>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('[data-toggle="tooltip"]').tooltip();
+	var checkbox = $('table tbody input[type="checkbox"]');
+	$("#selectAll").click(function(){
+		if(this.checked){
+			checkbox.each(function(){
+				this.checked = true;                        
+			});
+		} else{
+			checkbox.each(function(){
+				this.checked = false;                        
+			});
+		} 
+	});
+	checkbox.click(function(){
+		if(!this.checked){
+			$("#selectAll").prop("checked", false);
+		}
+	});
+});
+</script>
+</head>
+<body>
+    <div class="container">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-6">
+						<h2>Últimos Tickets</h2>
+					</div>
+					<div class="col-sm-6">
+						<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Novo</span></a>
+						<a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Excluir</span></a>						
+					</div>
+                </div>
+            </div>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+						<th>
+							<span class="custom-checkbox">
+								<input type="checkbox" id="selectAll">
+								<label for="selectAll"></label>
+							</span>
+						</th>
+                        <th>CÓDIGO</th>
+                        <th>EMPRESA</th>
+            						<th>ASSUNTO</th>
+            						<th>DEPARTAMENTO</th>
+                        <th>PRIORIDADE</th>
+                        <th>ANALISTA</th>
+                        <th>DATA</th>
+                        <th>STATUS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+						<td>
+							<span class="custom-checkbox">
+								<input type="checkbox" id="checkbox1" name="options[]" value="1">
+								<label for="checkbox1"></label>
+							</span>
+						</td>
+                        <td>01</td>
+                        <td>FATEC</td>
+            						<td>Erro TAF</td>
+            						<td>Suporte RM</td>
+                        <td>Alta</td>
+                        <td>Ryan</td>
+                        <td>09/11/2019</td>
+                        <td>Concluído</td>
+                        <td>
+                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                        </td>
+                    </tr>
+                    <tr>
+						<td>
+							<span class="custom-checkbox">
+								<input type="checkbox" id="checkbox2" name="options[]" value="1">
+								<label for="checkbox2"></label>
+							</span>
+						</td>
+                        <td>02</td>
+                        <td>BOM FUTURO</td>
+            						<td>Erro nfe</td>
+            						<td>Suporte Protheus</td>
+                        <td>Urgente</td>
+                        <td>Cleonilson</td>
+                        <td>12/11/2019</td>
+                        <td>Em Andamento</td>
+                        <td>
+                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                        </td>
+                    </tr>
+					<tr>
+						<td>
+							<span class="custom-checkbox">
+								<input type="checkbox" id="checkbox3" name="options[]" value="1">
+								<label for="checkbox3"></label>
+							</span>
+						</td>
+                        <td>03</td>
+                        <td>SENAI</td>
+              					<td>Erro nfe</td>
+              					<td>Suporte Protheus</td>
+                        <td>Urgente</td>
+                        <td>Ryan</td>
+                        <td>13/11/2019</td>
+                        <td>Em Andamento</td>
+                        <td>
+                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                        </td>
+                    </tr>
+                    <tr>
+						<td>
+							<span class="custom-checkbox">
+								<input type="checkbox" id="checkbox4" name="options[]" value="1">
+								<label for="checkbox4"></label>
+							</span>
+						</td>
+                        <td>04</td>
+                        <td>COMPER</td>
+            						<td>Excedeu Licenças</td>
+            						<td>Suporte Protheus</td>
+                        <td>Urgente</td>
+                        <td>Gabriel</td>
+                        <td>13/11/2019</td>
+                        <td>Concluído</td>
+                        <td>
+                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                        </td>
+                    </tr>					
+					<tr>
+						<td>
+							<span class="custom-checkbox">
+								<input type="checkbox" id="checkbox5" name="options[]" value="1">
+								<label for="checkbox5"></label>
+							</span>
+						</td>
+                        <td>05</td>
+                        <td>SORPAM</td>
+            						<td>Requisições via sistema</td>
+            						<td>Desenvolvimento RM</td>
+                        <td>Média</td>
+                        <td>Henrique</td>
+                        <td>13/11/2019</td>
+                        <td>Em Aberto</td>
+                        <td>
+                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                        </td>
+                    </tr> 
+                </tbody>
+            </table>
+			<div class="clearfix">
+                <div class="hint-text">Página<b> 3 </b>de<b> 5</b></div>
+                <ul class="pagination">
+                    <li class="page-item disabled"><a href="#">Voltar</a></li>
+                    <li class="page-item"><a href="#" class="page-link">1</a></li>
+                    <li class="page-item"><a href="#" class="page-link">2</a></li>
+                    <li class="page-item active"><a href="#" class="page-link">3</a></li>
+                    <li class="page-item"><a href="#" class="page-link">4</a></li>
+                    <li class="page-item"><a href="#" class="page-link">5</a></li>
+                    <li class="page-item"><a href="#" class="page-link">Avançar</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+	<!-- Edit Modal HTML -->
+	<div id="addEmployeeModal" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form>
+					<div class="modal-header">						
+						<h4 class="modal-title">NOVO TICKET</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body">					
+						<div class="form-group">
+    					<label for="exampleFormControlSelect1">EMPRESA</label>
+    					<select class="form-control" id="exampleFormControlSelect1">
+      					<option>SENAI</option>
+      					<option>SORPAM</option>
+      					<option>BOM FUTURO</option>
+      					<option>FATEC</option>
+      					<option>COMPER</option>
+    					</select>
+  						</div>		
+						<div class="form-group">
+							<label>ASSUNTO</label>
+							<input type="email" class="form-control" required>
+						</div>
+						<div class="form-group">
+							<label>DESCRIÇÃO</label>
+							<input type="email" class="form-control" required>
+						</div>
+						<div class="form-group">
+    					<label for="exampleFormControlSelect1">DEPARTAMENTO</label>
+    					<select class="form-control" id="exampleFormControlSelect1">
+      					<option>Suporte Protheus</option>
+      					<option>Suporte RM</option>
+      					<option>Desenvolvimento RM</option>
+      					<option>Desenvolvimento Protheus</option>
+    					</select>
+  						</div>			
+						<div class="form-group">
+    					<label for="exampleFormControlSelect1">PRIORIDADE</label>
+    					<select class="form-control" id="exampleFormControlSelect1">
+      					<option>Baixa</option>
+      					<option>Média</option>
+      					<option>Alta</option>
+      					<option>Urgente</option>
+    					</select>
+  						</div>			
+						<div class="form-group">
+    					<label for="exampleFormControlSelect1">ANALISTA</label>
+    					<select class="form-control" id="exampleFormControlSelect1">
+      					<option>Ryan</option>
+      					<option>Gabriel</option>
+      					<option>Henrique</option>
+      					<option>Cleonilson</option>
+    					</select>
+  						</div>							
+						<div class="form-group">
+							<label>DATA</label>
+							<input type="text" class="form-control" required>
+						</div>
+						<div class="form-group">
+    					<label for="exampleFormControlSelect1">STATUS</label>
+    					<select class="form-control" id="exampleFormControlSelect1">
+      					<option>Em Aberto</option>
+      					<option>Em Andamento</option>
+      					<option>Concluído</option>
+      					<option>Aguardando Resposta</option>
+    					</select>
+  						</div>													
+					</div>
+					<div class="modal-footer">
+						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
+						<input type="submit" class="btn btn-success" value="Salvar">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div id="editEmployeeModal" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form>
+					<div class="modal-header">						
+						<h4 class="modal-title">EDITAR</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div class="form-group">
+							<label>ASSUNTO</label>
+							<input type="email" class="form-control" required>
+						</div>
+						<div class="form-group">
+							<label>DESCRIÇÃO</label>
+							<input type="email" class="form-control" required>
+						</div>
+						<div class="form-group">
+    					<label for="exampleFormControlSelect1">DEPARTAMENTO</label>
+    					<select class="form-control" id="exampleFormControlSelect1">
+      					<option>Suporte Protheus</option>
+      					<option>Suporte RM</option>
+      					<option>Desenvolvimento RM</option>
+      					<option>Desenvolvimento Protheus</option>
+    					</select>
+  						</div>			
+						<div class="form-group">
+    					<label for="exampleFormControlSelect1">PRIORIDADE</label>
+    					<select class="form-control" id="exampleFormControlSelect1">
+      					<option>Baixa</option>
+      					<option>Média</option>
+      					<option>Alta</option>
+      					<option>Urgente</option>
+    					</select>
+  						</div>			
+						<div class="form-group">
+    					<label for="exampleFormControlSelect1">ANALISTA</label>
+    					<select class="form-control" id="exampleFormControlSelect1">
+      					<option>Ryan</option>
+      					<option>Gabriel</option>
+      					<option>Henrique</option>
+      					<option>Cleonilson</option>
+    					</select>
+  						</div>							
+						<div class="form-group">
+							<label>DATA</label>
+							<input type="text" class="form-control" required>
+						</div>
+						<div class="form-group">
+    					<label for="exampleFormControlSelect1">STATUS</label>
+    					<select class="form-control" id="exampleFormControlSelect1">
+      					<option>Em Aberto</option>
+      					<option>Em Andamento</option>
+      					<option>Concluído</option>
+      					<option>Aguardando Resposta</option>
+    					</select>
+  						</div>																		
+					</div>
+					<div class="modal-footer">
+						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
+						<input type="submit" class="btn btn-info" value="Salvar">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div id="deleteEmployeeModal" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form>
+					<div class="modal-header">						
+						<h4 class="modal-title">Excluir</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body">					
+						<p>Deseja mesmo excluir este ticket?</p>
+					</div>
+					<div class="modal-footer">
+						<input type="button" class="btn btn-default" data-dismiss="modal" value="Não">
+						<input type="submit" class="btn btn-danger" value="Sim">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>                                		                            
